@@ -40,13 +40,11 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="<?php echo base_url()."admin/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
+                  <li><a href="<?php echo base_url()."fo/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
                   </li>
-                  <li><a href="<?php echo base_url()."admin/Dashboard"?>"><i class="fa fa-users"></i> Pegawai</a>
+                  <li><a href="<?php echo base_url()."fo/Pegawai"?>"><i class="fa fa-users"></i> Pegawai</a>
                   </li>
-                  <li><a href="<?php echo base_url()."admin/Dashboard"?>"><i class="fa fa-user"></i> Dokter</a>
-                  </li>
-                  <li><a href="<?php echo base_url()."admin/Dashboard"?>"><i class="fa fa-user"></i> Keuangan</a>
+                  <li><a href="<?php echo base_url()."fo/Pensiunan"?>"><i class="fa fa-user "></i> Pensiunan</a>
                   </li>
                 </ul>
               </div>

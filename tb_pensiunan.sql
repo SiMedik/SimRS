@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2018 at 04:01 AM
+-- Generation Time: Jun 05, 2018 at 06:36 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `tb_pensiunan` (
 --
 
 INSERT INTO `tb_pensiunan` (`id_pensiunan`, `nama_pensiunan`, `tgl_pensiun`, `catatan`) VALUES
-(2, 'Pilih Pegawai', '0291-04-06', 'udshjkA                      \r\n                                      ');
+(2, 'Nurlisah s', '0291-04-06', '                                        udshjkA                      \r\n                                                                            ');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

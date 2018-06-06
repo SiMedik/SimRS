@@ -40,10 +40,10 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="<?php echo base_url()."admin/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
+                  <li><a href="<?php echo base_url()."dokter/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
                   </li>
-                  <li><a href="<?php echo base_url()."admin/Admin"?>"><i class="fa fa-user"></i>Pasien </a>
-                  <li><a href="<?php echo base_url()."admin/Pasien"?>"><i class="fa fa-users"></i>Rekam Medik </a>
+                  <li><a href="<?php echo base_url()."dokter/Pasien"?>"><i class="fa fa-user"></i>Pasien </a>
+                  <li><a href="<?php echo base_url()."dokter/Rekam_medik"?>"><i class="fa fa-users"></i>Rekam Medik </a>
                   </li>
                 </ul>
               </div>

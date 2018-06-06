@@ -285,7 +285,7 @@
                           <div class="panel-body">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="x_content">
-                                <table id="datatable" class="table table-striped table-bordered">
+                                <table id="example1" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
                                       <th>Tanggal</th>
@@ -320,7 +320,7 @@
                           <div class="panel-body">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="x_content">
-                                <table id="datatables" class="table table-striped table-bordered">
+                                <table id="example3" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
                                       <th>Tanggal</th>

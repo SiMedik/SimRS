@@ -27,5 +27,31 @@
     <script src="<?php echo base_url()?>assets/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="<?php echo base_url()?>assets/vendors/pdfmake/build/vfs_fonts.js"></script>
     <script src="<?php echo base_url()?>assets/build/js/custom.min.js"></script>
+    <script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        $("#example3").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
   </body>
 </html>

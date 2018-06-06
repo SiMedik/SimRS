@@ -40,10 +40,16 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="<?php echo base_url()."admin/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
+                  <li><a href="<?php echo base_url()."keuangan/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
                   </li>
-                  <li><a href="<?php echo base_url()."admin/Admin"?>"><i class="fa fa-user"></i>Pasien </a>
-                  <li><a href="<?php echo base_url()."admin/Pasien"?>"><i class="fa fa-users"></i>Rekam Medik </a>
+                  <li><a><i class="fa fa-edit"></i> Aset dan Inventoris <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url()."keuangan/Kategori"?>">Kategori</a></li>
+                      <li><a href="<?php echo base_url()."keuangan/P_Jawab"?>">Penanggung Jawab</a></li>
+                      <li><a href="<?php echo base_url()."keuangan/Merek"?>">Merek</a></li>
+                      <li><a href="<?php echo base_url()."keuangan/Inventori"?>">Inventori</a></li>
+                      
+                    </ul>
                   </li>
                 </ul>
               </div>

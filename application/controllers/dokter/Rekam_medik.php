@@ -10,7 +10,7 @@
 				redirect(base_url("admin/Login"));
 			}
 		}
-		public function index()
+	public function index()
 	{
 		$this->load->view('dokter/view_header');
 		$data['tb_pasien']	= $this->M_datamaster->tampil_data('tb_pasien');

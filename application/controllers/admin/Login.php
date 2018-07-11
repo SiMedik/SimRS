@@ -44,8 +44,8 @@ class Login extends CI_Controller {
 					redirect('dokter/Dashboard');
 				else if($qad->adm_level == 'Front Office')
 					redirect('Fo/Dashboard');
-				else if($qad->adm_level == 'Keuangan')
-					redirect('Keuangan/Dashboard');
+				else if($qad->adm_level == 'Back Office')
+					redirect('bo/Dashboard');
 				else
 					redirect('admin/Login');
 				}	

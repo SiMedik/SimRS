@@ -40,18 +40,21 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="<?php echo base_url()."fo/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
+                  <li><a href="<?php echo base_url()."bo/Dashboard"?>"><i class="fa fa-home"></i> Dashboard</a>
                   </li>
-                  <li><a href="<?php echo base_url()."fo/Dokter"?>"><i class="fa fa-user"></i>Dokter </a>
-                  <li><a href="<?php echo base_url()."fo/Pasien"?>"><i class="fa fa-user"></i>Pasien </a>
-                  <li><a href="<?php echo base_url()."fo/Obat"?>"><i class="fa fa-users"></i>Obat </a>
-                  <li><a href="<?php echo base_url()."fo/Apoteker"?>"><i class="fa fa-users"></i>Apoteker </a>
+                  <li><a><i class="fa fa-edit"></i> Aset dan Inventoris <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url()."bo/Kategori"?>">Kategori</a></li>
+                      <li><a href="<?php echo base_url()."bo/P_Jawab"?>">Penanggung Jawab</a></li>
+                      <li><a href="<?php echo base_url()."bo/Merek"?>">Merek</a></li>
+                      <li><a href="<?php echo base_url()."bo/Inventori"?>">Inventori</a></li>
+                    </ul>
                   </li>
-                  <li><a href="<?php echo base_url()."fo/Rawatinap"?>"><i class="fa fa-book"></i> Rawat Inap </a>
-                  </li>
-                  <li><a href="<?php echo base_url()."fo/Rawatjalan"?>"><i class="fa fa-book"></i>Rawat Jalan </a>
-                  </li>
-                  <li><a href="<?php echo base_url()."fo/Rawatugd"?>"><i class="fa fa-book"></i>Rawat UGD </a>
+                  <li><a><i class="fa fa-edit"></i> Pegawai dan pensiunan <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url()."bo/Pegawai"?>">Pegawai</a></li>
+                      <li><a href="<?php echo base_url()."bo/Pensiunan"?>">Pensiunan</a></li>
+                    </ul>
                   </li>
                 </ul>
               </div>

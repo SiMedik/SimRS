@@ -53,16 +53,17 @@ class Admin extends CI_Controller {
 							'adm_level'		  	 => $adm_level
 						);
 			}
-			else
-			{
-				$data = array(
-							'adm_nama'			 => $adm_nama,
-							'adm_username'		 => $adm_username,
-							'adm_pass'			 => $adm_pass,
-							'adm_level'		  	 => $adm_level
-						);
-			}
-		}		
+		}
+		else
+		{
+			$data = array(
+						'adm_nama'			 => $adm_nama,
+						'adm_username'		 => $adm_username,
+						'adm_pass'			 => $adm_pass,
+						'adm_level'		  	 => $adm_level
+					);
+		}
+			
 		$res = $this->M_datamaster->input_data($data,'tb_admin');
 		if($res==1){
 		 	redirect('admin/Admin');
@@ -112,6 +113,7 @@ class Admin extends CI_Controller {
 							'adm_level'		  	 => $adm_level
 						);
 			}
+		}
 			else
 			{
 				$data = array(
@@ -122,7 +124,7 @@ class Admin extends CI_Controller {
 							'adm_level'		  	 => $adm_level
 						);
 			}
-		}		
+			
 		$where = array(
 			'id_admin' => $id_admin
 		);

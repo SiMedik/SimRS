@@ -31,6 +31,8 @@
           <div class="x_content">
           <br>
           <?php foreach($tb_pasien as $l){
+             $query = $this->db->query("select * from tb_jalan where id_pasien = $l->id_pasien")->result();
+              $queri = $this->db->query("select * from tb_ugd where id_pasien = $l->id_pasien")->result();
           ?>
             <form action="" method="post" enctype="multipart/form-data" role="form" data-parsley-validate="" class="form-horizontal form-label-left">
               <div class="row">
@@ -288,23 +290,26 @@
                                 <table id="example1" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
+                                      <th>No</th>
                                       <th>Tanggal</th>
                                       <th>Poli</th>
                                       <th>Dokter</th>
                                       <th>Diagnosa</th>
-                                      <th>Detail</th>
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td>
-                                        <a type="button" class="btn btn-danger" href="<?php echo base_url()."dokter/Rekam_medik/detail/".$l->id_pasien ?>" style="color: #fff"><i class="fa fa-search"></i></a>
-                                      </td>
-                                    </tr>
+                                    <?php
+                                    $no = 1;
+                                    foreach($query as $o){
+                                    ?>
+                                      <tr>
+                                        <td><?php echo $no++?></td>
+                                        <td><?php echo $o->tgl?></td>
+                                        <td><?php echo $o->poli?></td>
+                                        <td><?php echo $o->dokter?></td>
+                                        <td><?php echo $o->diagnosa?></td>
+                                      </tr>
+                                    <?php }?>
                                   </tbody>
                                 </table>
                               </div>
@@ -323,21 +328,24 @@
                                 <table id="example3" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
+                                      <th>No</th>
                                       <th>Tanggal</th>
                                       <th>Dokter</th>
                                       <th>Diagnosa</th>
-                                      <th>Detail</th>
                                     </tr>
                                   </thead>
                                   <tbody>
+                                  <?php
+                                  $no = 1;
+                                  foreach($query as $o){
+                                  ?>
                                     <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td>
-                                        <a type="button" class="btn btn-danger" href="<?php echo base_url()."dokter/Rekam_medik/detail/".$l->id_pasien ?>" style="color: #fff"><i class="fa fa-search"></i></a>
-                                      </td>
+                                      <td><?php echo $no++?></td>
+                                      <td><?php echo $o->tgl?></td>
+                                      <td><?php echo $o->dokter?></td>
+                                      <td><?php echo $o->diagnosa?></td>
                                     </tr>
+                                  <?php }?>
                                   </tbody>
                                 </table>
                               </div>

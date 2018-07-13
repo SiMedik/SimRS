@@ -19,5 +19,8 @@
 			$this->db->where($where);
 			$this->db->delete($tabel);
 		}
+		function tampil($id_pasien){
+			return $this->db->query('SELECT count(b.id_pasien) as Jalan ,count(c.id_pasien) as Inap ,count(d.id_pasien) as UGD FROM tb_pasien a left join tb_jalan b on a.id_pasien = b.id_pasien left join tb_nginap c on a.id_pasien = c.id_pasien left join tb_ugd d on a.id_pasien = d.id_pasien where a.id_pasien = '.$id_pasien.' group by a.id_pasien')->row();
+		}
 	}
 ?>

@@ -2,7 +2,7 @@
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h3>Ringkasan Rekam Medik Pasien</small></h3>
+        <h3>Ringkasan Data Pasien</small></h3>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -10,7 +10,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Data Rekam Medik Pasien</h2>
+            <h2>Data Pasien</h2>
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>
@@ -31,6 +31,7 @@
           <div class="x_content">
           <br>
           <?php foreach($tb_pasien as $l){
+             $query = $this->db->query("select * from tb_nginap where id_pasien = $l->id_pasien")->result();
           ?>
             <form action="" method="post" enctype="multipart/form-data" role="form" data-parsley-validate="" class="form-horizontal form-label-left">
               <div class="row">
@@ -115,38 +116,118 @@
                   </div>
                 </div>
               </div>
+              <div class="ln_solid"></div>
+            </form>
+          <?php }?>
+          <div>
+            <form action="<?php echo base_url('fo/Rawatinap/tambah') ?>" method="post" enctype="multipart/form-data" role="form" data-parsley-validate="" class="form-horizontal form-label-left">
               <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <table class="table table-bordered">
+                <div class="form-group">
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <?php 
+                    foreach($tb_pasien as $k){
+                    ?>
+                      <input type="hidden"  name="id_pasien" value="<?php echo $k->id_pasien ?>" required="required" class="form-control col-md-7 col-xs-12">
+                    <?php } ?>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2 col-sm-2 col-xs-12">Ruangan</label>
+                  <div class="col-md-10 col-sm-10 col-xs-12">
+                      <input type="text"  name="ruangan" required="required" class="form-control col-md-7 col-xs-12">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2 col-sm-2 col-xs-12">Kelas</label>
+                  <div class="col-md-10 col-sm-10 col-xs-12">
+                      <input type="text"  name="kelas" required="required" class="form-control col-md-7 col-xs-12">
+                  </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-md-2 col-sm-2 col-xs-12">Kamar</label>
+                  <div class="col-md-10 col-sm-10 col-xs-12">
+                    <select class="select2_single form-control" name="no_kamar">
+                      <option>Pilih Kamar</option>
+                      <?php 
+                      foreach($tb_inap as $l){
+                      ?>
+                      <option value="<?php echo $l->nama_kamar?>"><?php echo $l->nama_kamar?></option>
+                      <?php } ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                <label class="control-label col-md-2 col-sm-2 col-xs-12">Dokter</label>
+                  <div class="col-md-10 col-sm-10 col-xs-12">
+                    <select class="select2_single form-control" name="dokter">
+                      <option>Pilih Dokter</option>
+                      <?php 
+                      foreach($tb_dokter as $i){
+                      ?>
+                      <option value="<?php echo $i->nama_dokter?>"><?php echo $i->nama_dokter?></option>
+                      <?php } ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2 col-sm-2 col-xs-12" for="textarea">Diagnosa <span class="required">*</span>
+                  </label>
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                      <textarea id="textarea" required="required" name="diagnosa" class="form-control col-md-7 col-xs-12"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                <div class="col-md-11 col-sm-11 col-xs-12 col-md-offset-11">
+                  <button type="submit" class="btn btn-danger">Simpan</button>
+                </div>
+              </div>
+              </div>
+            </form>
+            </div>
+          <div>
+            <div class="panel-body">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_content">
+                  <table id="datatable" class="table table-striped table-bordered">
                     <thead>
-                      <tr style="background-color: #337ab7;color: white">
-                        <th>Tahun</th>
-                        <th>Jumlah Rawat Inap</th>
-                        <th>Jumlah Rawat Jalan</th>
-                        <th>Jumlah Rawat UGD</th>
+                      <tr>
+                        <th>No</th>
+                        <th>Tanggal</th>
+                        <th>Ruangan</th>
+                        <th>Kelas</th>
+                        <th>No Kamar</th>
+                        <th>Dokter</th>
+                        <th>Diagnosa</th>
+                        <th>Biaya</th>
                       </tr>
                     </thead>
                     <tbody>
-                      
+                    <?php
+                    $no = 1;
+                    foreach($query as $o){
+                    ?>
                       <tr>
-                        <th scope="row">2018</th>
-                        <td><?php echo $lisa->Inap;?></td>
-                        <td><?php echo $lisa->Jalan;?></td>
-                        <td><?php echo $lisa->UGD;?></td>
+                        <td><?php echo $no++?></td>
+                        <td><?php echo $o->tgl?></td>
+                        <td><?php echo $o->ruangan?></td>
+                        <td><?php echo $o->kelas?></td>
+                        <td><?php echo $o->no_kamar?></td>
+                        <td><?php echo $o->dokter?></td>
+                        <td><?php echo $o->diagnosa?></td>
+                        <td><?php echo $o->biaya?></td>
                       </tr>
+                    <?php }?>
                     </tbody>
                   </table>
                 </div>
-              </div>
-              <div class="ln_solid"></div>
-              <div class="form-group">
-                <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-9">
-                  <a type="button" class="btn btn-danger" href="<?php echo base_url()."dokter/Rekam_medik/detail/".$l->id_pasien ?>" style="color: #fff"><i class="fa fa-search"></i> Detail Rekam Medik</a>
-                  <button class="btn btn-primary" type="button">Kembali</button>
+                <div class="form-group">
+                <div class="col-md-11 col-sm-11 col-xs-12 col-md-offset-11">
+                  <a href="<?php echo base_url('fo/Rawatjalan') ?>" type="button" class="btn btn-danger">kembali</a>
                 </div>
               </div>
-            </form>
-          <?php }?>
+            </div>
+          </div>
           </div>
         </div>
       </div>

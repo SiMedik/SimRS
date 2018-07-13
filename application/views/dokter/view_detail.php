@@ -33,6 +33,7 @@
           <?php foreach($tb_pasien as $l){
              $query = $this->db->query("select * from tb_jalan where id_pasien = $l->id_pasien")->result();
               $queri = $this->db->query("select * from tb_ugd where id_pasien = $l->id_pasien")->result();
+              $quer = $this->db->query("select * from tb_nginap where id_pasien = $l->id_pasien")->result();
           ?>
             <form action="" method="post" enctype="multipart/form-data" role="form" data-parsley-validate="" class="form-horizontal form-label-left">
               <div class="row">
@@ -249,6 +250,7 @@
                                 <table id="datatable" class="table table-striped table-bordered">
                                   <thead>
                                     <tr>
+                                      <th>No</th>
                                       <th>Tanggal</th>
                                       <th>Ruangan</th>
                                       <th>Kelas</th>
@@ -256,22 +258,24 @@
                                       <th>Dokter</th>
                                       <th>Diagnosa</th>
                                       <th>Biaya</th>
-                                      <th>Detail</th>
                                     </tr>
                                   </thead>
                                   <tbody>
+                                  <?php
+                                  $no = 1;
+                                  foreach($quer as $o){
+                                  ?>
                                     <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td>
-                                        <a type="button" class="btn btn-danger" href="<?php echo base_url()."dokter/Rekam_medik/detail/".$l->id_pasien ?>" style="color: #fff"><i class="fa fa-search"></i></a>
-                                      </td>
+                                      <td><?php echo $no++?></td>
+                                      <td><?php echo $o->tgl?></td>
+                                      <td><?php echo $o->ruangan?></td>
+                                      <td><?php echo $o->kelas?></td>
+                                      <td><?php echo $o->no_kamar?></td>
+                                      <td><?php echo $o->dokter?></td>
+                                      <td><?php echo $o->diagnosa?></td>
+                                      <td><?php echo $o->biaya?></td>
                                     </tr>
+                                  <?php }?>
                                   </tbody>
                                 </table>
                               </div>

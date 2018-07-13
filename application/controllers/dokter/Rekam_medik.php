@@ -22,7 +22,9 @@
 			'id_pasien' => $id_pasien
 		);
 		$this->load->view('dokter/view_header');
+
 		$data['tb_pasien'] = $this->M_datamaster->edit_data($where,'tb_pasien')->result();
+		$data['lisa']	   = $this->M_datamaster->tampil($id_pasien);
 		$this->load->view('dokter/view_detail_rekammedik',$data);
 		$this->load->view('dokter/view_footer');
 	}

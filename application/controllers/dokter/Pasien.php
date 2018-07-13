@@ -95,11 +95,9 @@
 			'pekerjaan'			=> $pekerjaan,
 			'status_menikah'	=> $status_menikah
 		);
-
 		$where = array(
 			'id_pasien' => $id_pasien
 		);
-
 		$this->M_datamaster->update_data($where,$data,'tb_pasien');
 		redirect('dokter/Pasien');
 		
@@ -111,8 +109,7 @@
 
 		$this->M_datamaster->hapus_data($where,'tb_pasien');
 		redirect('dokter/Pasien');
-		
-	}
+		}
 	}
 
 ?>
